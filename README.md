@@ -23,14 +23,14 @@ Extract and transform the excel data from 'crowdfunding.xlsx' to create a Catego
 - category_id: sequential entries as "cat _n_"
 - category: contains the category titles
 
-The Category DataFrame is then saved as 'category.csv' in the Resources Folder
+**_The Category DataFrame is then saved as 'category.csv' in the Resources Folder_**
 
 #### Subcategory DataFrame
 Extract and transform the excel data from 'crowdfunding.xlsx' to create a Subcategory DataFrame containing:
 - subcategory_id: sequential entries as "subcat _n_"
 - subcategory: contains the subcategory titles
 
-The Subcategory DataFrame is then saved as 'subcategory.csv' in the Resources Folder
+**_The Subcategory DataFrame is then saved as 'subcategory.csv' in the Resources Folder_**
 
 ------------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ Extract and transform the excel data from 'crowdfunding.xlsx' using Pandas DataF
 - "category_id" column, with unique identification numbers matching those in the "category_id" column of the category DataFrame
 - "subcategory_id" column, with the unique identification numbers matching those in the "subcategory_id" column of the subcategory DataFrame
 
-The Campaign DataFrame is then saved as 'campaign.csv' in the Resources Folder
+**_The Campaign DataFrame is then saved as 'campaign.csv' in the Resources Folder_**
 
 ------------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ This is done by iterating through each the DataFrame and converting each row to 
 
 A new DataFrame (contact) is created containing the extracted data
 
-The Contact DataFrame is then saved as 'contact.csv' in the Resources Folder
+**__The Contact DataFrame is then saved as 'contact.csv' in the Resources Folder__**
 
 -----------------------------------------------------------------------------
 
