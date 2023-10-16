@@ -1,6 +1,9 @@
 # Crowdfunding_ETL
+By Cayley Morrow, Zonia Quiroga, and Michael Lee
 
-This project involves building an ETL pipeline using Python, Pandas, and either Python dictionary methods or regular expressions to extract and transform the data. After transforming the data, CSV files are created and used to create an ERD and table schema. The CSV file is then uploaded into a Postgres database. 
+-----------------------------------------------------------------------------
+
+This project involves building an ETL pipeline using Python, Pandas, and Python dictionary methods to extract and transform the data. After transforming the data, CSV files are created and used to create an ERD and table schema. The CSV file is then uploaded into a Postgres database. 
 
 -----------------------------------------------------------------------------
 
@@ -15,39 +18,62 @@ This project involves building an ETL pipeline using Python, Pandas, and either 
 
 ### Creating the Category and Subcategory DataFrame
 #### Category DataFrame
-Extract and transform the excel data from 'crowdfunding.xlsx' to create a category DataFrame containing:
+
+Extract and transform the excel data from 'crowdfunding.xlsx' to create a Category DataFrame containing:
 - category_id: sequential entries as "cat _n_"
 - category: contains the category titles
 
-The category DataFrame is then saved as 'category.csv'
+The Category DataFrame is then saved as 'category.csv' in the Resources Folder
 
 #### Subcategory DataFrame
-Extract and transform the excel data from 'crowdfunding.xlsx' to create a subcategory DataFrame containing:
+Extract and transform the excel data from 'crowdfunding.xlsx' to create a Subcategory DataFrame containing:
 - subcategory_id: sequential entries as "subcat _n_"
 - subcategory: contains the subcategory titles
 
-The subcategory DataFrame is then saved as 'subcategory.csv'
+The Subcategory DataFrame is then saved as 'subcategory.csv' in the Resources Folder
 
 ------------------------------------------------------------------------------
 
 ### Creating the Campaign DataFrame
-Extract and transform the excel data from 'crowdfunding.xlsx' using Python dictionary methods to create a campaign DataFrame that has the following columns:
-- The "cf_id" column
-- The "contact_id" column
-- The "company_name" column
-- The "blurb" column, renamed to "description"
-- The "goal" column, converted to the float data type
-- The "pledged" column, converted to the float data type
-- The "outcome" column
-- The "backers_count" column
-- The "country" column
-- The "currency" column
-- The "launched_at" column, renamed to "launch_date" and with the UTC times converted to the datetime format
-- The "deadline" column, renamed to "end_date" and with the UTC times converted to the datetime format
-- The "category_id" column, with unique identification numbers matching those in the "category_id" column of the category DataFrame
-- The "subcategory_id" column, with the unique identification numbers matching those in the "subcategory_id" column of the subcategory DataFrame
 
-The campaign DataFrame is then saved as 'campaign.csv'
+Extract and transform the excel data from 'crowdfunding.xlsx' using Pandas DataFrame methods to create a Campaign DataFrame that has the following columns:
+- "cf_id" column
+- "contact_id" column
+- "company_name" column
+- "blurb" column, renamed to "description"
+- "goal" column, converted to the float data type
+- "pledged" column, converted to the float data type
+- "outcome" column
+- "backers_count" column
+- "country" column
+- "currency" column
+- "launched_at" column, renamed to "launch_date" and with the UTC times converted to the datetime format
+- "deadline" column, renamed to "end_date" and with the UTC times converted to the datetime format
+- "category_id" column, with unique identification numbers matching those in the "category_id" column of the category DataFrame
+- "subcategory_id" column, with the unique identification numbers matching those in the "subcategory_id" column of the subcategory DataFrame
+
+The Campaign DataFrame is then saved as 'campaign.csv' in the Resources Folder
 
 ------------------------------------------------------------------------------
+
+### Creating the Contact DataFrame
+
+Extract and transform the excel data from 'crowdfunding.xlsx' using Pandas DataFrame methods to create a Contact DataFrame that has the following columns:
+
+- "contact_id" column
+- "first_name" column
+- "last_name" column
+- "email" column
+
+This is done by iterating through each the DataFrame and converting each row to a Dictionary, then by iterating through each dictionary the following is done:
+- the dictionary values are extracted from the keys using a Python list comprehension
+- the values for each row are added to a list
+
+A new DataFrame (contact) is created containing the extracted data
+
+The Contact DataFrame is then saved as 'contact.csv' in the Resources Folder
+
+-----------------------------------------------------------------------------
+
+### Creating the Crowdfunding Database
 
